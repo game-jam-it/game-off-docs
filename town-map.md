@@ -101,6 +101,40 @@ A 2D map showing roads, points of interest, and region indicators. The center of
 
 Requires all tilesets needed to cover regions, roads, paths, building types, and the surrounding forest.
 
+#### Generator Config
+
+Big Map (+-82 Nodes)
+```
+var cfg = {
+	"zoom": 25,
+	"nodes": 192,
+	"culler": 0.35,
+	"spread": Vector2(620.0, 40.0),
+	"type_a_dist": 7680000,
+	"type_a_offset": 384,
+	"type_b_dist": 25600000,
+	"type_b_offset": 512,
+	"type_c_dist": 76800000,
+	"type_c_offset": 768,
+}
+```
+
+Small Map (+-60 Nodes)
+```
+var cfg = {
+	"zoom": 20,
+	"nodes": 96,
+	"culler": 0.25,
+	"spread": Vector2(160.0, 20.0),
+	"type_a_dist": 5120000,
+	"type_a_offset": 384,
+	"type_b_dist": 12800000,
+	"type_b_offset": 512,
+	"type_c_dist": 51200000,
+	"type_c_offset": 768,
+}
+```
+
 ### The Expedition Map
 
 As with the town map, the base is a hex map that is more detailed than the town map and has more 2.5D visual aspects. The base textures also need 42 tiles to map all possible edges and transitions between types. Exceptions are that some of the detail or building types may only have edges on top the or bottom of a hex.
