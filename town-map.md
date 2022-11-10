@@ -23,6 +23,7 @@ When a new game starts the town map is generated and populated with a pseudo-ran
 
 High-level object overview:
 ```mermaid
+%%{init: { 'theme': 'forest', 'darkMode': true } }%%
 classDiagram
 TheTown --> TownMap
 TheTown --> TownGrid
@@ -93,6 +94,68 @@ EventNode : position
 ```
 
 ---
+### Select an Event
+
+In the preperation phase the user is presented with a town map and has a certain amount of time to complete the daily tasks.
+
+> For the MVP the only available progress are expedition events.
+
+```mermaid
+%%{init: { 'theme': 'forest', 'darkMode': true } }%%
+sequenceDiagram
+	participant Mouse
+	participant TownEvents
+	Mouse-->>TownEvents: enters event node
+	TownEvents-->>TheTown:  focus event (coords)
+	TheTown-->>Overview:  focus event (coords)
+	Overview->>Overview:  display event info
+	Mouse-->>TownEvents: leaves event node
+	TownEvents-->>TheTown:  clear event (coords)
+	TheTown-->>Overview:  clear event (coords)
+	Overview->>Overview:  clear event info
+	opt when focused
+		Mouse-->>TownEvents: click event node
+		TownEvents-->>TheTown:  select event (coords)
+		TheTown-->>Overview:  select event (coords)
+		Overview->>Overview:  open confirm dialog
+		alt when canceled
+			Overview->>Overview: close confirm dialog
+			Overview-->>TheTown:  clear select event (coords) 
+		else when confirmed
+			Overview->>Overview: close confirm dialog
+			Overview-->>TheTown:  set select event (coords)
+		end
+	end
+```
+---
+### Shoping Event
+> TODO Implementm Not part of the MVP
+
+### Reseache Event
+> TODO Implementm Not part of the MVP
+
+### Expedition Event
+
+Expedition events start by the player hovering the mouse over an event on the town map and then deciding to select the event. Once the event is started the town map fades out while zooming in and enters the expedition mode.
+
+Entering the expedition mode means the start of the expedition loop. **Where the goal is to?**
+
+```mermaid
+%%{init: { 'theme': 'forest', 'darkMode': true } }%%
+sequenceDiagram
+		participant EventsMap
+		participant TownEvents
+		participant TheTown
+		participant Overview
+		Overview-->>TheTown:  set select event (coords)
+		TheTown-->>TownEvents:  start event (coords)
+		TownEvents-->TownEvents: Hide Town Grid & Gfx
+		TheTown-->>EventsMap:  start event (coords)
+		EventsMap-->EventsMap: Show Event Grid & Gfx
+```
+
+
+---
 ## Visual
 
 ### The Town Map
@@ -103,10 +166,11 @@ Requires all tilesets needed to cover regions, roads, paths, building types, and
 
 #### Generator Config
 
-Big Map (+-82 Nodes)
+###### Config v1
+Big Map (+-90 Nodes)
 ```
 var cfg = {
-	"zoom": 25,
+	"zoom": 16,
 	"nodes": 192,
 	"culler": 0.35,
 	"spread": Vector2(620.0, 40.0),
@@ -122,7 +186,7 @@ var cfg = {
 Small Map (+-60 Nodes)
 ```
 var cfg = {
-	"zoom": 20,
+	"zoom": 14,
 	"nodes": 96,
 	"culler": 0.25,
 	"spread": Vector2(160.0, 20.0),
@@ -132,6 +196,40 @@ var cfg = {
 	"type_b_offset": 512,
 	"type_c_dist": 51200000,
 	"type_c_offset": 768,
+}
+```
+
+###### Config v2
+Big Map (+-60 Nodes)
+```
+const BIG_MAP = {
+	"zoom": 16,
+	"nodes": 128,
+	"culler": 0.35,
+	"spread": Vector2(620.0, 40.0),
+	"grid_size": Vector2(1280.0, 720.0),
+	"center": 7680000,
+	"center_offset": 384,
+	"outer": 25600000,
+	"outer_offset": 512,
+	"edge": 51200000,
+	"edge_offset": 768,
+}
+
+Small Map (+-30 Nodes)
+```
+const SMALL_MAP = {
+	"zoom": 14,
+	"nodes": 56,
+	"culler": 0.25,
+	"spread": Vector2(160.0, 20.0),
+	"grid_size": Vector2(1024.0, 576.0),
+	"center": 2560000,
+	"center_offset": 128,
+	"outer": 7680000,
+	"outer_offset": 256,
+	"edge": 25600000,
+	"edge_offset": 512,
 }
 ```
 
