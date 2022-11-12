@@ -107,23 +107,23 @@ sequenceDiagram
 	participant TownEvents
 	Mouse-->>TownEvents: enters event node
 	TownEvents-->>TheTown:  focus event (coords)
-	TheTown-->>Overview:  focus event (coords)
-	Overview->>Overview:  display event info
+	TheTown-->>Overlay:  focus event (coords)
+	Overlay->>Overlay:  display event info
 	Mouse-->>TownEvents: leaves event node
 	TownEvents-->>TheTown:  clear event (coords)
-	TheTown-->>Overview:  clear event (coords)
-	Overview->>Overview:  clear event info
+	TheTown-->>Overlay:  clear event (coords)
+	Overlay->>Overlay:  clear event info
 	opt when focused
 		Mouse-->>TownEvents: click event node
 		TownEvents-->>TheTown:  select event (coords)
-		TheTown-->>Overview:  select event (coords)
-		Overview->>Overview:  open confirm dialog
-		alt when canceled
-			Overview->>Overview: close confirm dialog
-			Overview-->>TheTown:  clear select event (coords) 
-		else when confirmed
-			Overview->>Overview: close confirm dialog
-			Overview-->>TheTown:  set select event (coords)
+		TheTown-->>Overlay:  select event (coords)
+		Overlay->>Overlay:  open confirm dialog
+		alt when confirmed
+			Overlay->>Overlay: close confirm dialog
+			Overlay->>TheTown:  start select event (coords)
+		else when canceled
+			Overlay->>Overlay: close confirm dialog
+			Overlay->>TheTown:  cancel select event (coords) 
 		end
 	end
 ```
@@ -146,12 +146,34 @@ sequenceDiagram
 		participant EventsMap
 		participant TownEvents
 		participant TheTown
-		participant Overview
-		Overview-->>TheTown:  set select event (coords)
+		participant Overlay
+		Overlay-->>TheTown:  set select event (coords)
+		Overlay-->>Overlay:  hide TownHud
+		Overlay-->>Overlay:  show EventHud
 		TheTown-->>TownEvents:  start event (coords)
 		TownEvents-->TownEvents: Hide Town Grid & Gfx
 		TheTown-->>EventsMap:  start event (coords)
 		EventsMap-->EventsMap: Show Event Grid & Gfx
+```
+
+```mermaid
+%%{init: { 'theme': 'forest', 'darkMode': true } }%%
+sequenceDiagram
+		participant EventsMap
+		participant TheTown
+		participant Overlay
+		TheTown-->>EventsMap: start event (coords)
+		opt pause menu
+			EventsMap-->>Overlay: pause expedition
+			Overlay->>Overlay:  open pause dialog
+			alt when continue
+				Overlay->>Overlay: close pause dialog
+				Overlay->>TheTown:  resume expedition
+			else when run to safety
+				Overlay->>Overlay: close pause dialog
+				Overlay->>TheTown:  escape expedition
+			end
+		end
 ```
 
 
