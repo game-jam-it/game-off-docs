@@ -3,39 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.721669113971">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="2.4.0.721692131848">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 2.4.0">
 
     <!-- Primary Meta Tags -->
-    <title>Technical Overview</title>
-    <meta name="title" content="Technical Overview">
-    <meta name="description" content="Two map types get generated procedurally where the town map contains multiple event maps." />
+    <title>The Gang</title>
+    <meta name="title" content="The Gang">
+    <meta name="description" content="The Gang is a group of stereotyped teens that offer the player different play styles, events, and arcs." />
 
     <!-- Canonical -->
-    <link rel="canonical" href="/the-town/town-technical/" />
+    <link rel="canonical" href="/actors/characters/" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="/the-town/town-technical/">
-    <meta property="og:title" content="Technical Overview">
-    <meta property="og:description" content="Two map types get generated procedurally where the town map contains multiple event maps.">
+    <meta property="og:url" content="/actors/characters/">
+    <meta property="og:title" content="The Gang">
+    <meta property="og:description" content="The Gang is a group of stereotyped teens that offer the player different play styles, events, and arcs.">
+    <meta property="og:image" content="/static/refrence-art/actor-the-cast-color.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="/the-town/town-technical/">
-    <meta property="twitter:title" content="Technical Overview">
-    <meta property="twitter:description" content="Two map types get generated procedurally where the town map contains multiple event maps.">
+    <meta property="twitter:url" content="/actors/characters/">
+    <meta property="twitter:title" content="The Gang">
+    <meta property="twitter:description" content="The Gang is a group of stereotyped teens that offer the player different play styles, events, and arcs.">
+    <meta property="twitter:image" content="/static/refrence-art/actor-the-cast-color.png">
 
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=2.4.0.721669113971" rel="stylesheet" />
+    <link href="../../resources/css/retype.css?v=2.4.0.721692131848" rel="stylesheet" />
 
-    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.721669113971" data-turbo-eval="false" defer></script>
+    <script type="text/javascript" src="../../resources/js/config.js?v=2.4.0.721692131848" data-turbo-eval="false" defer></script>
     <script type="text/javascript" src="../../resources/js/retype.js?v=2.4.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.721669113971" data-turbo-eval="false" defer></script>
-    <script id="mermaid-js" type="text/javascript" src="../../resources/js/mermaid.js?v=2.4.0" defer></script>
+    <script id="lunr-js" type="text/javascript" src="../../resources/js/lunr.js?v=2.4.0.721692131848" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -153,275 +154,90 @@
                                 <div id="docs-sidebar-right-toggle"></div>
                 
                                 <!-- Page content  -->
-<doc-anchor-target id="technical-overview" class="break-words">
+<doc-anchor-target id="the-gang" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#technical-overview">#</doc-anchor-trigger>
-        <span>Technical Overview</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#the-gang">#</doc-anchor-trigger>
+        <span>The Gang</span>
     </h1>
 </doc-anchor-target>
-<p>Two map types get generated procedurally where the town map contains multiple event maps. While there is some overlap there is a split between the required functionality and the visual representation of the underlying information.</p>
-<p>When a new game starts the town map is generated and populated with a pseudo-random selection of event nodes. When a play selects an event node on the town map and starts an expedition the map zooms in to the node as the details get generated and drawn onto the screen.</p>
-<doc-anchor-target id="expedition">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#expedition">#</doc-anchor-trigger>
-        <span>Expedition</span>
-    </h3>
-</doc-anchor-target>
-<p>The player starts an expedition by selecting the location on the town map.</p>
-<doc-anchor-target id="preparation">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#preparation">#</doc-anchor-trigger>
-        <span>Preparation</span>
-    </h3>
-</doc-anchor-target>
-<blockquote>
-<p>MVP: Skips this phase: The player is presented with the town map and possible expeditions to choose from.</p>
-</blockquote>
-<p>The player uses downtime to move across the map and or gather resources.</p>
+<p>The Gang is a group of stereotyped teens that offer the player different play styles, events, and arcs. Some members of the gang may require specific events to unfold before they become available.</p>
+<p><figure class="content-center">
+    <img src="../../static/refrence-art/actor-the-cast-color.png" alt="" />
+    <figcaption class="caption"></figcaption>
+</figure>
+</p>
 <hr />
-<p>High-level object overview:</p>
-<div class="overflow-hidden mb-6 py-4 dark:px-5 dark:bg-white rounded-md"><pre class="mermaid w-full">%%{init: { 'theme': 'forest', 'darkMode': true } }%%
-classDiagram
-TheTown --&gt; TownMap
-TheTown --&gt; TownGrid
-TheTown --&gt; EventGrid
-TheTown --&gt; EventMap
-
-TownMap *-- TownNode
-TownGrid *-- TownHex
-
-EventMap *-- EventNode
-EventGrid *-- EventHex
-
-TownMap &lt;--&gt; TownCreator
-TheTown --o TownCreator
-TownGrid &lt;-- TownCreator
-
-EventGrid &lt;-- EventCreator
-TheTown --o EventCreator
-EventMap &lt;--&gt; EventCreator
-
-TownMap : path []
-TownMap : road []
-TownMap : nodes {}
-TownMap : get_node(vec2) 
-TownMap : set_node(vec2)
-
-TownGrid : path {}
-TownGrid : road {}
-TownGrid : grid HexGrid
-TownGrid : get_hex(vec2)
-TownGrid : get_path(from, to)
-
-EventMap : path []
-EventMap : road []
-EventMap : nodes {}
-EventMap : get_node(vec2)
-EventMap : set_node(vec2) 
-
-EventGrid : path {}
-EventGrid : road {}
-EventGrid : grid HexGrid
-EventGrid : get_hex(vec2)
-EventGrid : get_path(from, to)
-
-TownHex : type
-TownHex : barrier
-TownHex : obstacle
-TownHex : coords
-TownHex : position
-
-TownNode : size
-TownNode : links
-TownNode : region
-TownNode : coords
-TownNode : position
-
-EventHex : type
-EventHex : barrier
-EventHex : obstacle
-EventHex : coords
-EventHex : position
-
-EventNode : size
-EventNode : type
-EventNode : group
-EventNode : coords
-EventNode : position</pre></div>
-<hr />
-<doc-anchor-target id="select-an-event">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#select-an-event">#</doc-anchor-trigger>
-        <span>Select an Event</span>
-    </h3>
-</doc-anchor-target>
-<p>In the preperation phase the user is presented with a town map and has a certain amount of time to complete the daily tasks.</p>
-<blockquote>
-<p>For the MVP the only available progress are expedition events.</p>
-</blockquote>
-<div class="overflow-hidden mb-6 py-4 dark:px-5 dark:bg-white rounded-md"><pre class="mermaid w-full">%%{init: { 'theme': 'forest', 'darkMode': true } }%%
-sequenceDiagram
-	participant Mouse
-	participant TownEvents
-	Mouse--&gt;&gt;TownEvents: enters event node
-	TownEvents--&gt;&gt;TheTown:  focus event (coords)
-	TheTown--&gt;&gt;Overlay:  focus event (coords)
-	Overlay-&gt;&gt;Overlay:  display event info
-	Mouse--&gt;&gt;TownEvents: leaves event node
-	TownEvents--&gt;&gt;TheTown:  clear event (coords)
-	TheTown--&gt;&gt;Overlay:  clear event (coords)
-	Overlay-&gt;&gt;Overlay:  clear event info
-	opt when focused
-		Mouse--&gt;&gt;TownEvents: click event node
-		TownEvents--&gt;&gt;TheTown:  select event (coords)
-		TheTown--&gt;&gt;Overlay:  select event (coords)
-		Overlay-&gt;&gt;Overlay:  open confirm dialog
-		alt when confirmed
-			Overlay-&gt;&gt;Overlay: close confirm dialog
-			Overlay-&gt;&gt;TheTown:  start select event (coords)
-		else when canceled
-			Overlay-&gt;&gt;Overlay: close confirm dialog
-			Overlay-&gt;&gt;TheTown:  cancel select event (coords) 
-		end
-	end</pre></div>
-<hr />
-<doc-anchor-target id="shoping-event">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#shoping-event">#</doc-anchor-trigger>
-        <span>Shoping Event</span>
-    </h3>
-</doc-anchor-target>
-<blockquote>
-<p>TODO Implementm Not part of the MVP</p>
-</blockquote>
-<doc-anchor-target id="reseache-event">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#reseache-event">#</doc-anchor-trigger>
-        <span>Reseache Event</span>
-    </h3>
-</doc-anchor-target>
-<blockquote>
-<p>TODO Implementm Not part of the MVP</p>
-</blockquote>
-<doc-anchor-target id="expedition-event">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#expedition-event">#</doc-anchor-trigger>
-        <span>Expedition Event</span>
-    </h3>
-</doc-anchor-target>
-<p>Expedition events start by the player hovering the mouse over an event on the town map and then deciding to select the event. Once the event is started the town map fades out while zooming in and enters the expedition mode.</p>
-<p>Entering the expedition mode means the start of the expedition loop. <strong>Where the goal is to?</strong></p>
-<div class="overflow-hidden mb-6 py-4 dark:px-5 dark:bg-white rounded-md"><pre class="mermaid w-full">%%{init: { 'theme': 'forest', 'darkMode': true } }%%
-sequenceDiagram
-		participant EventsMap
-		participant TownEvents
-		participant TheTown
-		participant Overlay
-		Overlay--&gt;&gt;TheTown:  set select event (coords)
-		Overlay--&gt;&gt;Overlay:  hide TownHud
-		Overlay--&gt;&gt;Overlay:  show EventHud
-		TheTown--&gt;&gt;TownEvents:  start event (coords)
-		TownEvents--&gt;TownEvents: Hide Town Grid &amp; Gfx
-		TheTown--&gt;&gt;EventsMap:  start event (coords)
-		EventsMap--&gt;EventsMap: Show Event Grid &amp; Gfx</pre></div>
-<div class="overflow-hidden mb-6 py-4 dark:px-5 dark:bg-white rounded-md"><pre class="mermaid w-full">%%{init: { 'theme': 'forest', 'darkMode': true } }%%
-sequenceDiagram
-		participant EventsMap
-		participant TheTown
-		participant Overlay
-		TheTown--&gt;&gt;EventsMap: start event (coords)
-		opt pause menu
-			EventsMap--&gt;&gt;Overlay: pause expedition
-			Overlay-&gt;&gt;Overlay:  open pause dialog
-			alt when continue
-				Overlay-&gt;&gt;Overlay: close pause dialog
-				Overlay-&gt;&gt;TheTown:  resume expedition
-			else when run to safety
-				Overlay-&gt;&gt;Overlay: close pause dialog
-				Overlay-&gt;&gt;TheTown:  escape expedition
-			end
-		end</pre></div>
-<hr />
-<doc-anchor-target id="generator-configs">
+<doc-anchor-target id="mvp-version">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#generator-configs">#</doc-anchor-trigger>
-        <span>Generator Configs</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#mvp-version">#</doc-anchor-trigger>
+        <span>MVP Version</span>
     </h4>
 </doc-anchor-target>
-<doc-anchor-target id="config-v1">
-    <h6>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#config-v1">#</doc-anchor-trigger>
-        <span>Config v1</span>
-    </h6>
+<ul>
+<li><strong>Characters:</strong>
+<ul>
+<li>Nerd Boy</li>
+</ul>
+</li>
+<li><strong>Weapons:</strong>
+<ul>
+<li>Fist</li>
+<li>Chainsaw</li>
+<li>Baseball Bat</li>
+</ul>
+</li>
+</ul>
+<doc-anchor-target id="demo-version">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#demo-version">#</doc-anchor-trigger>
+        <span>Demo Version</span>
+    </h4>
 </doc-anchor-target>
-<p>Big Map (+-90 Nodes)</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">var cfg = {
-	&quot;zoom&quot;: 16,
-	&quot;nodes&quot;: 192,
-	&quot;culler&quot;: 0.35,
-	&quot;spread&quot;: Vector2(620.0, 40.0),
-	&quot;type_a_dist&quot;: 7680000,
-	&quot;type_a_offset&quot;: 384,
-	&quot;type_b_dist&quot;: 25600000,
-	&quot;type_b_offset&quot;: 512,
-	&quot;type_c_dist&quot;: 76800000,
-	&quot;type_c_offset&quot;: 768,
-}</code></pre>
-</doc-codeblock></div>
-<p>Small Map (+-60 Nodes)</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">var cfg = {
-	&quot;zoom&quot;: 14,
-	&quot;nodes&quot;: 96,
-	&quot;culler&quot;: 0.25,
-	&quot;spread&quot;: Vector2(160.0, 20.0),
-	&quot;type_a_dist&quot;: 5120000,
-	&quot;type_a_offset&quot;: 384,
-	&quot;type_b_dist&quot;: 12800000,
-	&quot;type_b_offset&quot;: 512,
-	&quot;type_c_dist&quot;: 51200000,
-	&quot;type_c_offset&quot;: 768,
-}</code></pre>
-</doc-codeblock></div>
-<doc-anchor-target id="config-v2">
-    <h6>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#config-v2">#</doc-anchor-trigger>
-        <span>Config v2</span>
-    </h6>
+<ul>
+<li><strong>Characters:</strong>
+<ul>
+<li>Nerd Boy</li>
+<li>Occult Girl</li>
+</ul>
+</li>
+<li><strong>Weapons:</strong>
+<ul>
+<li>Knife</li>
+<li>Big Stick</li>
+<li>Hockey Stick</li>
+</ul>
+</li>
+</ul>
+<doc-anchor-target id="final-version">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#final-version">#</doc-anchor-trigger>
+        <span>Final Version</span>
+    </h4>
 </doc-anchor-target>
-<p>Big Map (+-60 Nodes)</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">const BIG_MAP = {
-	&quot;zoom&quot;: 16,
-	&quot;nodes&quot;: 128,
-	&quot;culler&quot;: 0.35,
-	&quot;spread&quot;: Vector2(620.0, 40.0),
-	&quot;grid_size&quot;: Vector2(1280.0, 720.0),
-	&quot;center&quot;: 7680000,
-	&quot;center_offset&quot;: 384,
-	&quot;outer&quot;: 25600000,
-	&quot;outer_offset&quot;: 512,
-	&quot;edge&quot;: 51200000,
-	&quot;edge_offset&quot;: 768,
-}</code></pre>
-</doc-codeblock></div>
-<p>Small Map (+-30 Nodes)</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">const SMALL_MAP = {
-	&quot;zoom&quot;: 14,
-	&quot;nodes&quot;: 56,
-	&quot;culler&quot;: 0.25,
-	&quot;spread&quot;: Vector2(160.0, 20.0),
-	&quot;grid_size&quot;: Vector2(1024.0, 576.0),
-	&quot;center&quot;: 2560000,
-	&quot;center_offset&quot;: 128,
-	&quot;outer&quot;: 7680000,
-	&quot;outer_offset&quot;: 256,
-	&quot;edge&quot;: 25600000,
-	&quot;edge_offset&quot;: 512,
-}</code></pre>
-</doc-codeblock></div>
+<ul>
+<li><strong>Characters:</strong>
+<ul>
+<li>Nerd Boy</li>
+<li>The Stoner</li>
+<li>Occult Girl</li>
+<li>The Jock</li>
+<li>The Bimbo</li>
+<li>Library Girl</li>
+<li>Perishable Guy</li>
+</ul>
+</li>
+<li><strong>Weapons:</strong>
+<ul>
+<li>Katana</li>
+<li>Machete</li>
+<li>Rifle</li>
+<li>Pistol</li>
+<li>Shotgun</li>
+<li>Crossbow</li>
+<li>Brass Knuckles</li>
+</ul>
+</li>
+</ul>
 
                                 
                                 <!-- Required only on API pages -->
@@ -431,16 +247,23 @@ sequenceDiagram
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../the-town/graphics/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../actors/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Graphics</span>
+                                                <span class="block mt-1">Actors</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../actors/enemies/">
+                                            <span>
+                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
+                                                <span class="block mt-1">The Others</span>
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        </a>
                                     </div>
                                 </nav>
                             </footer>
@@ -481,6 +304,6 @@ sequenceDiagram
 
     <div id="docs-overlay-target"></div>
 
-    <script>window.__DOCS__ = { "title": "Technicals", level: 2, icon: "file", hasPrism: false, hasMermaid: true, hasMath: false }</script>
+    <script>window.__DOCS__ = { "title": "The Gang", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
 </body>
 </html>
