@@ -21,6 +21,6 @@ Several tilesets are required per type of setting and region on the map.
 
 ---
 
-**Ref.** Tilemap for hex based grids
+**Ref.** Tilemap for hex-based grids
 **Note:** To reduce the workload layered hard edges can be used where suited. Meaning that an edge tile covers another tile to create the transition. The result is that the top edge tile texture can be used to define multiple transitions without having to manually create all maps.
 ![](/static/technical-art/ref-hex-tilemap.png)

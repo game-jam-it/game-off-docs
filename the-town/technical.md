@@ -96,9 +96,9 @@ EventNode : position
 ---
 ### Select an Event
 
-In the preperation phase the user is presented with a town map and has a certain amount of time to complete the daily tasks.
+In the preparation phase, the user is presented with a town map and has a certain amount of time to complete the daily tasks.
 
-> For the MVP the only available progress are expedition events.
+> For the MVP the only available progress is expedition events.
 
 ```mermaid
 %%{init: { 'theme': 'forest', 'darkMode': true } }%%
@@ -128,17 +128,17 @@ sequenceDiagram
 	end
 ```
 ---
-### Shoping Event
+### Shopping Event
 > TODO Implementm Not part of the MVP
 
-### Reseache Event
+### Research Event
 > TODO Implementm Not part of the MVP
 
 ### Expedition Event
 
-Expedition events start by the player hovering the mouse over an event on the town map and then deciding to select the event. Once the event is started the town map fades out while zooming in and enters the expedition mode.
+Expedition events start with the player hovering the mouse over an event on the town map and then deciding to select the event. Once the event is started the town map fades out while zooming in and enters the expedition mode.
 
-Entering the expedition mode means the start of the expedition loop. **Where the goal is to?**
+Entering the expedition mode means the start of the expedition loop. **Where the goal is?**
 
 ```mermaid
 %%{init: { 'theme': 'forest', 'darkMode': true } }%%
