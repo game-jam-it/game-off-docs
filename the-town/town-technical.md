@@ -1,4 +1,9 @@
-# Small Town Map
+---
+label: Technicals
+order: 100
+---
+
+# Technical Overview
 
 As the player is selecting a character to play a town map is generated for the game.
 
@@ -237,6 +242,7 @@ const BIG_MAP = {
 	"edge": 51200000,
 	"edge_offset": 768,
 }
+```
 
 Small Map (+-30 Nodes)
 ```
@@ -262,6 +268,7 @@ As with the town map, the base is a hex map that is more detailed than the town 
 Several tilesets are required per type of setting and region on the map.
 
 ---
+
 **Ref.** Tilemap for hex based grids
 **Note:** To reduce the workload layered hard edges can be used where suited. Meaning that an edge tile covers another tile to create the transition. The result is that the top edge tile texture can be used to define multiple transitions without having to manually create all maps.
-![](/static/ref-hex-tilemap.png)
+![](/static/technical-art/ref-hex-tilemap.png)

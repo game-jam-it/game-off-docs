@@ -1,4 +1,4 @@
-# Game Design
+# A Game
 
 ### Design
 
@@ -19,3 +19,7 @@ Instead, all hell broke loose, many of the town’s inhabitants became possessed
 You play as this teenager, one of many slasher tropes, desperately seeking out the resources required to perform the counter ritual and set everything right again, it’s the only way you know you can make it out of this alive.
 
 Also, the girl who you all thought would be the “Final Girl”? She’s nowhere to be seen.
+
+---
+
+![](/static/refrence-art/draft-intro.png)
