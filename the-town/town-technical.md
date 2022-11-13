@@ -5,26 +5,21 @@ order: 100
 
 # Technical Overview
 
-As the player is selecting a character to play a town map is generated for the game.
+Two map types get generated procedurally where the town map contains multiple event maps. While there is some overlap there is a split between the required functionality and the visual representation of the underlying information.
 
-## Game Design
-
-### Prepphase
-
-> MVP: Skips this phase: The player is presented with the town map and possible expeditions to choose from.
-
-The player uses downtime to move across the map and or gather resources.
+When a new game starts the town map is generated and populated with a pseudo-random selection of event nodes. When a play selects an event node on the town map and starts an expedition the map zooms in to the node as the details get generated and drawn onto the screen.
 
 ### Expedition
 
 The player starts an expedition by selecting the location on the town map.
 
+### Preparation
+
+> MVP: Skips this phase: The player is presented with the town map and possible expeditions to choose from.
+
+The player uses downtime to move across the map and or gather resources.
+
 ---
-## Technical
-
-Two map types get generated procedurally where the town map contains multiple event maps. While there is some overlap there is a split between the required functionality and the visual representation of the underlying information.
-
-When a new game starts the town map is generated and populated with a pseudo-random selection of event nodes. When a play selects an event node on the town map and starts an expedition the map zooms in to the node as the details get generated and drawn onto the screen.
 
 High-level object overview:
 ```mermaid
@@ -183,15 +178,7 @@ sequenceDiagram
 
 
 ---
-## Visual
-
-### The Town Map
-
-A 2D map showing roads, points of interest, and region indicators. The center of the town is more urban areas, more to the outside it gets rural, and on the outskirts, there may be more abandoned/unused areas. The map is managed as a hexagonal tilemap. This means around 42 tiles to map all possible edges and transitions between types.
-
-Requires all tilesets needed to cover regions, roads, paths, building types, and the surrounding forest.
-
-#### Generator Config
+#### Generator Configs
 
 ###### Config v1
 Big Map (+-90 Nodes)
@@ -260,15 +247,3 @@ const SMALL_MAP = {
 	"edge_offset": 512,
 }
 ```
-
-### The Expedition Map
-
-As with the town map, the base is a hex map that is more detailed than the town map and has more 2.5D visual aspects. The base textures also need 42 tiles to map all possible edges and transitions between types. Exceptions are that some of the detail or building types may only have edges on top the or bottom of a hex.
-
-Several tilesets are required per type of setting and region on the map.
-
----
-
-**Ref.** Tilemap for hex based grids
-**Note:** To reduce the workload layered hard edges can be used where suited. Meaning that an edge tile covers another tile to create the transition. The result is that the top edge tile texture can be used to define multiple transitions without having to manually create all maps.
-![](/static/technical-art/ref-hex-tilemap.png)
