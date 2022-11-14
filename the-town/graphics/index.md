@@ -19,6 +19,21 @@ As with the town map, the base is a hex map that is more detailed than the town 
 Several tilesets are required per type of setting and region on the map.
 
 
+#### Map Objects
+
+* Obsticals:
+	
+	Defined by one or more points that make it dificult for actors to enter the hexes under the defined points.
+
+* Hard Obsticals:
+
+	Defined by one or more points that fully block actors from entering the hexes under the defined points.
+
+* Walls and Fencing:
+
+	Defined by a path going from point A to point B, all actors are blocked from entering hexes along the path.
+
+
 ---
 
 **Ref.** Tilemap for hex-based grids
