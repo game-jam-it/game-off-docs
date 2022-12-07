@@ -72,4 +72,4 @@ Losing direct sight the slasher slows down, and investigates the last know locat
 
 ---
 
-![](/static/refrence-art/draft-intro.png)
+![](/static/intro-v02.png)
