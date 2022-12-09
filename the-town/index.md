@@ -1,3 +1,8 @@
+---
+label: The Town
+order: 300
+---
+
 ## Intro
 
 The game takes place in a fictional town in the United States. A small suburb with a school, some stores, a summer camp, and other amenities, it even has a few abandoned environments such as a sawmill, or dock.
@@ -8,7 +13,7 @@ At the beginning of every run, a map is generated for the player to explore. The
 
 For every region, the town has multiple sectors/nodes for the player to explore. Most of these sectors are random nodes, while some are quest-specific nodes that can be substantially larger.
 
-![](/static/refrence-art/TheTown-hexmap-concept.png)
+[![](/static/refrence-art/TheTown-hexmap-concept.png)](/static/refrence-art/thetown-hexmap-concept.png)
 
 ---
 

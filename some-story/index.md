@@ -1,3 +1,8 @@
+---
+label: Some Story
+order: 100
+---
+
 ## Intro
 
 Every actor has his own life and story to experience.

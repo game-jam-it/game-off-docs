@@ -7,13 +7,13 @@ order: 700
 
 The Gang is a group of stereotyped teens that offer the player different play styles, events, and arcs. Some members of the gang may require specific events to unfold before they become available.
 
-![](/static/refrence-art/actor-the-cast-color.png)
+[![](/static/refrence-art/actor-the-cast-color.png)](/static/refrence-art/actor-the-cast-color.png)
 
 ---
 #### MVP Version
 
 * **Characters:**
-  - Nerd Boy
+  - Norman (The Nerd)
 * **Weapons:**
   - Fist
   - Chainsaw
@@ -22,7 +22,7 @@ The Gang is a group of stereotyped teens that offer the player different play st
 #### Demo Version
 
 * **Characters:**
-  - Nerd Boy
+  - Norman (The Nerd)
   - Occult Girl
 * **Weapons:**
   - Knife
@@ -32,7 +32,7 @@ The Gang is a group of stereotyped teens that offer the player different play st
 #### Final Version
 
 * **Characters:**
-  - Nerd Boy
+  - Norman (The Nerd)
   - The Stoner
   - Occult Girl
   - The Jock
