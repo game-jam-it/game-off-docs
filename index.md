@@ -1,6 +1,10 @@
-# Intro
-
 ---
+image: /static/feature-image1.jpg
+---
+
+![](/static/intro-v02.png)
+
+# Intro
 
 ## Design
 
@@ -66,10 +70,3 @@ a) As the player enters an abandoned lumber camp, there are a bunch of lesser de
 
 b) While traveling home, an ambush happens. Demons stop the player, and a slasher rushes onto the map. The player quickly kills the daemons and tries to runaway or hide from the slasher. In doing so one tries to bash through a locked door but is not strong enough and fails. As the next best option one leaps through the glass window and takes some damage.<br /><br />
 Losing direct sight the slasher slows down, and investigates the last know location. During this time the player runs or hides and hopes the slasher gives up on the chase.
-
-
-
-
----
-
-![](/static/intro-v02.png)
