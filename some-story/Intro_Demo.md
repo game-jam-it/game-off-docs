@@ -26,7 +26,9 @@ The script is a work in progress, will be updated overtime.
 ![Dialogue_1](https://i.imgur.com/F578Mc4.jpg)
 
 ### Script
+
 **Opening Sequence**
+
 *Fade from black to a plain and uninspired average school corridor. Lockers cover the walls, making the place feel more crowded than it's necessary. The stench of puberty fills the air, suffocating the few oxygen molecules that barely make through the gaps left by the semi-opened windows, which overwatch the students from above the lockers. The pale light of the flickering fluorescent tubes gives everything a yellowish tone of unhealthiness. If all of this wasn't enough, the consistent chatter leaves no room to breathe.*
 *It's no surpirse many call this place a prison*
 
