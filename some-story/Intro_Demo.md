@@ -2,7 +2,7 @@
 
 This is the intro of the DEMO. It features only 2 characters. In the final version, all of the characters will be introduced.
 The characters are indicated with their role in "[]" brackets. It has to be read as their real names.
-The script is a work in progress, will be updated overtime.
+The script is a work in progress, will be updated over time.
 
 ---
 
@@ -115,7 +115,9 @@ The two character met at the abandoned house. They get to the large room which w
 ### Storyboard
 
 ### Dialogue
+
 **Opening Sequence**
+
 *Later that day*
 *Fade in to decrepit room. Half eaten, half moldy wooden boards form an unstable and creeky floor. The dust is so dense you can smell it, and its particle shines when hit by the flashlight. Calling the atmosphere "eerie" would be a severe understatment.*
 
